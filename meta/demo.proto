@@ -1,0 +1,32 @@
+message ComposeType
+{
+	message _CName
+	{
+		optional	string	id 	= 1[default="ID"];
+	};
+	required	int32	id	=	1;
+};
+
+message Meta
+{
+	message _PrimaryKey
+	{
+		optional int32		id = 1;
+	};
+	message _CName
+	{
+		optional string		id = 1[default="ID"];
+		optional string		ct = 2[default="复合"];
+		optional string		arr = 3[default="数组"];
+		optional string		arrct = 4[default="复合数组"];
+	};
+	required	int32	id	=	1;
+	optional	ComposeType	ct 	=	2;
+	repeated	int32	arr	=	3;
+	repeated	ComposeType	arrct	=	4;
+};
+message MetaTable
+{
+	repeated Meta	list	=	1;
+};
+
