@@ -3,7 +3,7 @@ xlsconverter
 
 a simple tools convert xls file to protobuffer file  .
 
-#it's gameconfloader new edition (not compatiable)
+#####it's gameconfloader new edition (not compatiable)
 
 a converter that convert many xls files to a binary file or text file to supporting program reading .
 the xls schema described by protobuf .
