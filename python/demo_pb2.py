@@ -17,8 +17,8 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='demo.proto',
-  package='',
-  serialized_pb=_b('\n\ndemo.proto\"3\n\x0b\x43omposeType\x12\n\n\x02id\x18\x01 \x02(\x05\x1a\x18\n\x06_CName\x12\x0e\n\x02id\x18\x01 \x01(\t:\x02ID\"\xd1\x01\n\x04Meta\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x18\n\x02\x63t\x18\x02 \x01(\x0b\x32\x0c.ComposeType\x12\x0b\n\x03\x61rr\x18\x03 \x03(\x05\x12\x1b\n\x05\x61rrct\x18\x04 \x03(\x0b\x32\x0c.ComposeType\x1a\x19\n\x0b_PrimaryKey\x12\n\n\x02id\x18\x01 \x01(\x05\x1a^\n\x06_CName\x12\x0e\n\x02id\x18\x01 \x01(\t:\x02ID\x12\x12\n\x02\x63t\x18\x02 \x01(\t:\x06\xe5\xa4\x8d\xe5\x90\x88\x12\x13\n\x03\x61rr\x18\x03 \x01(\t:\x06\xe6\x95\xb0\xe7\xbb\x84\x12\x1b\n\x05\x61rrct\x18\x04 \x01(\t:\x0c\xe5\xa4\x8d\xe5\x90\x88\xe6\x95\xb0\xe7\xbb\x84\" \n\tMetaTable\x12\x13\n\x04list\x18\x01 \x03(\x0b\x32\x05.Meta')
+  package='res',
+  serialized_pb=_b('\n\ndemo.proto\x12\x03res\"3\n\x0b\x43omposeType\x12\n\n\x02id\x18\x01 \x02(\x05\x1a\x18\n\x06_CName\x12\x0e\n\x02id\x18\x01 \x01(\t:\x02ID\"\xd9\x01\n\x04Meta\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x1c\n\x02\x63t\x18\x02 \x01(\x0b\x32\x10.res.ComposeType\x12\x0b\n\x03\x61rr\x18\x03 \x03(\x05\x12\x1f\n\x05\x61rrct\x18\x04 \x03(\x0b\x32\x10.res.ComposeType\x1a\x19\n\x0b_PrimaryKey\x12\n\n\x02id\x18\x01 \x01(\x05\x1a^\n\x06_CName\x12\x0e\n\x02id\x18\x01 \x01(\t:\x02ID\x12\x12\n\x02\x63t\x18\x02 \x01(\t:\x06\xe5\xa4\x8d\xe5\x90\x88\x12\x13\n\x03\x61rr\x18\x03 \x01(\t:\x06\xe6\x95\xb0\xe7\xbb\x84\x12\x1b\n\x05\x61rrct\x18\x04 \x01(\t:\x0c\xe5\xa4\x8d\xe5\x90\x88\xe6\x95\xb0\xe7\xbb\x84\"$\n\tMetaTable\x12\x17\n\x04list\x18\x01 \x03(\x0b\x32\t.res.Meta')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -27,13 +27,13 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 _COMPOSETYPE__CNAME = _descriptor.Descriptor(
   name='_CName',
-  full_name='ComposeType._CName',
+  full_name='res.ComposeType._CName',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='ComposeType._CName.id', index=0,
+      name='id', full_name='res.ComposeType._CName.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("ID").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -50,19 +50,19 @@ _COMPOSETYPE__CNAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=41,
-  serialized_end=65,
+  serialized_start=46,
+  serialized_end=70,
 )
 
 _COMPOSETYPE = _descriptor.Descriptor(
   name='ComposeType',
-  full_name='ComposeType',
+  full_name='res.ComposeType',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='ComposeType.id', index=0,
+      name='id', full_name='res.ComposeType.id', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -79,20 +79,20 @@ _COMPOSETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14,
-  serialized_end=65,
+  serialized_start=19,
+  serialized_end=70,
 )
 
 
 _META__PRIMARYKEY = _descriptor.Descriptor(
   name='_PrimaryKey',
-  full_name='Meta._PrimaryKey',
+  full_name='res.Meta._PrimaryKey',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='Meta._PrimaryKey.id', index=0,
+      name='id', full_name='res.Meta._PrimaryKey.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -109,40 +109,40 @@ _META__PRIMARYKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=156,
-  serialized_end=181,
+  serialized_start=169,
+  serialized_end=194,
 )
 
 _META__CNAME = _descriptor.Descriptor(
   name='_CName',
-  full_name='Meta._CName',
+  full_name='res.Meta._CName',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='Meta._CName.id', index=0,
+      name='id', full_name='res.Meta._CName.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("ID").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ct', full_name='Meta._CName.ct', index=1,
+      name='ct', full_name='res.Meta._CName.ct', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("\345\244\215\345\220\210").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='arr', full_name='Meta._CName.arr', index=2,
+      name='arr', full_name='res.Meta._CName.arr', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("\346\225\260\347\273\204").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='arrct', full_name='Meta._CName.arrct', index=3,
+      name='arrct', full_name='res.Meta._CName.arrct', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("\345\244\215\345\220\210\346\225\260\347\273\204").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -159,40 +159,40 @@ _META__CNAME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=183,
-  serialized_end=277,
+  serialized_start=196,
+  serialized_end=290,
 )
 
 _META = _descriptor.Descriptor(
   name='Meta',
-  full_name='Meta',
+  full_name='res.Meta',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='Meta.id', index=0,
+      name='id', full_name='res.Meta.id', index=0,
       number=1, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ct', full_name='Meta.ct', index=1,
+      name='ct', full_name='res.Meta.ct', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='arr', full_name='Meta.arr', index=2,
+      name='arr', full_name='res.Meta.arr', index=2,
       number=3, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='arrct', full_name='Meta.arrct', index=3,
+      name='arrct', full_name='res.Meta.arrct', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -209,20 +209,20 @@ _META = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=68,
-  serialized_end=277,
+  serialized_start=73,
+  serialized_end=290,
 )
 
 
 _METATABLE = _descriptor.Descriptor(
   name='MetaTable',
-  full_name='MetaTable',
+  full_name='res.MetaTable',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='list', full_name='MetaTable.list', index=0,
+      name='list', full_name='res.MetaTable.list', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -239,8 +239,8 @@ _METATABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=279,
-  serialized_end=311,
+  serialized_start=292,
+  serialized_end=328,
 )
 
 _COMPOSETYPE__CNAME.containing_type = _COMPOSETYPE
@@ -258,12 +258,12 @@ ComposeType = _reflection.GeneratedProtocolMessageType('ComposeType', (_message.
   _CName = _reflection.GeneratedProtocolMessageType('_CName', (_message.Message,), dict(
     DESCRIPTOR = _COMPOSETYPE__CNAME,
     __module__ = 'demo_pb2'
-    # @@protoc_insertion_point(class_scope:ComposeType._CName)
+    # @@protoc_insertion_point(class_scope:res.ComposeType._CName)
     ))
   ,
   DESCRIPTOR = _COMPOSETYPE,
   __module__ = 'demo_pb2'
-  # @@protoc_insertion_point(class_scope:ComposeType)
+  # @@protoc_insertion_point(class_scope:res.ComposeType)
   ))
 _sym_db.RegisterMessage(ComposeType)
 _sym_db.RegisterMessage(ComposeType._CName)
@@ -273,19 +273,19 @@ Meta = _reflection.GeneratedProtocolMessageType('Meta', (_message.Message,), dic
   _PrimaryKey = _reflection.GeneratedProtocolMessageType('_PrimaryKey', (_message.Message,), dict(
     DESCRIPTOR = _META__PRIMARYKEY,
     __module__ = 'demo_pb2'
-    # @@protoc_insertion_point(class_scope:Meta._PrimaryKey)
+    # @@protoc_insertion_point(class_scope:res.Meta._PrimaryKey)
     ))
   ,
 
   _CName = _reflection.GeneratedProtocolMessageType('_CName', (_message.Message,), dict(
     DESCRIPTOR = _META__CNAME,
     __module__ = 'demo_pb2'
-    # @@protoc_insertion_point(class_scope:Meta._CName)
+    # @@protoc_insertion_point(class_scope:res.Meta._CName)
     ))
   ,
   DESCRIPTOR = _META,
   __module__ = 'demo_pb2'
-  # @@protoc_insertion_point(class_scope:Meta)
+  # @@protoc_insertion_point(class_scope:res.Meta)
   ))
 _sym_db.RegisterMessage(Meta)
 _sym_db.RegisterMessage(Meta._PrimaryKey)
@@ -294,7 +294,7 @@ _sym_db.RegisterMessage(Meta._CName)
 MetaTable = _reflection.GeneratedProtocolMessageType('MetaTable', (_message.Message,), dict(
   DESCRIPTOR = _METATABLE,
   __module__ = 'demo_pb2'
-  # @@protoc_insertion_point(class_scope:MetaTable)
+  # @@protoc_insertion_point(class_scope:res.MetaTable)
   ))
 _sym_db.RegisterMessage(MetaTable)
 
