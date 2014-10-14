@@ -158,7 +158,8 @@ def convert_main():
 		print(attrs)
 		convertmap[attrs[0]] = attrs[1:]
 	convertmap_file.close()
-	cpp_include_file = open("./cpp/gameconfloader.h","w+")	
+	cpp_include_file = open("./cpp/include.h","w+")	
+	cpp_include_file.write("#pragma once\n")
 	cpp_include_file.write("//protobufer generate code include file . don't edit it !\n")
 	now = datetime.datetime.now()
 	cpp_include_file.write("//generate time :"+str(now)+"\n")
@@ -170,12 +171,14 @@ def convert_main():
 		cpp_include_file.write('#include "'+convertmap[xls][0].split(".")[0]+'.pb.h"\n')		
 		#convert to data
 		convertxls(xls,convertmap[xls])
+	cpp_include_file.write('\n')	
 	cpp_include_file.close()
 
 
 
 ##########################################################################################################
-print("welcome using game conf res loader tools  !")
-convert_main()
+if len(sys.argv) > 1 and sys.argv[1] == 'run' :
+	print("welcome using game conf res loader tools  !")
+	convert_main()
 
 
