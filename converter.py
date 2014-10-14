@@ -150,11 +150,12 @@ def convertxls(xls,convertparam):
 
 import datetime,time
 def convert_main():
-	# *.xls:*.proto:meta:*.bin
+	# *.xls:*.proto:meta
 	convertmap = {};
 	convertmap_file = open("convertmap.conf")
 	for line in convertmap_file:
 		attrs = line.split(":")
+		attrs.append(attrs[2]+"Table.bin")
 		print(attrs)
 		convertmap[attrs[0]] = attrs[1:]
 	convertmap_file.close()

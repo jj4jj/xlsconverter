@@ -1,3 +1,5 @@
+package res;
+
 message ComposeType
 {
 	message _CName
