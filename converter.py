@@ -148,6 +148,30 @@ def convertxls(xls,convertparam):
 	f.write(tableObj.SerializeToString())
 	f.close()
 
+
+######################################
+def readMetaFromBin(tableObj,binDataName):
+	f=open(binDataName,"rb")
+	tableObj.ParseFromString(f.read())
+	f.close()
+#############################################################################
+#import re
+def printObj(tableObj):
+	it = 0
+	for entry in tableObj.list:
+		entry_string=""
+		if 0 == it:
+			for attr in entry.ListFields():
+				entry_string += unicode(attr[0].name) + '\t'
+			print(entry_string)
+			it=1
+		entry_string=""
+		for attr in entry.ListFields():
+			entry_string += unicode(getattr(entry,str(attr[0].name))) + '\t'
+		print(entry_string)
+
+
+
 import datetime,time
 def convert_main():
 	# *.xls:*.proto:meta
@@ -175,11 +199,31 @@ def convert_main():
 	cpp_include_file.write('\n')	
 	cpp_include_file.close()
 
+def	generate_meta_table_obj(proto,meta):
+	proto_mod_name = proto.split(".")[0]+"_pb2"
+	proto_mod = __import__(proto_mod_name)
+	objMeta = getattr(proto_mod,meta)
+	desc = objMeta.DESCRIPTOR
+	tableObjTypeName = meta+'Table';
+	tableObjProtoType = getattr(proto_mod,tableObjTypeName)
+	return tableObjProtoType()
 
+def usage(name):
+	print(name+" [run|help|read <protof> <meta>]")
 
 ##########################################################################################################
 if len(sys.argv) > 1 and sys.argv[1] == 'run' :
 	print("welcome using game conf res loader tools  !")
 	convert_main()
+elif len(sys.argv) > 1 and sys.argv[1] == "help" :
+	usage(sys.argv[0])
+elif len(sys.argv) > 1 and sys.argv[1] == "read" :
+	protof = sys.argv[2]
+	meta = sys.argv[3]
+	binf = "data/"+meta+"Table.bin"
+	print("read from "+binf+" with proto "+protof)
+	tableObj = generate_meta_table_obj(protof,meta)
+	readMetaFromBin(tableObj,binf)
+	printObj(tableObj)
 
 

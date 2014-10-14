@@ -22,7 +22,7 @@ message Meta
 		optional string		arr = 3[default="数组"];
 		optional string		arrct = 4[default="复合数组"];
 	};
-	required	int32	id	=	1;
+	required	uint32	id	=	1;
 	optional	ComposeType	ct 	=	2;
 	repeated	int32	arr	=	3;
 	repeated	ComposeType	arrct	=	4;
