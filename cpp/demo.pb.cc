@@ -201,9 +201,9 @@ void protobuf_AddDesc_demo_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\ndemo.proto\022\003res\"3\n\013ComposeType\022\n\n\002id\030\001"
     " \002(\005\032\030\n\006_CName\022\016\n\002id\030\001 \001(\t:\002ID\"\331\001\n\004Meta\022"
-    "\n\n\002id\030\001 \002(\005\022\034\n\002ct\030\002 \001(\0132\020.res.ComposeTyp"
+    "\n\n\002id\030\001 \002(\r\022\034\n\002ct\030\002 \001(\0132\020.res.ComposeTyp"
     "e\022\013\n\003arr\030\003 \003(\005\022\037\n\005arrct\030\004 \003(\0132\020.res.Comp"
-    "oseType\032\031\n\013_PrimaryKey\022\n\n\002id\030\001 \001(\005\032^\n\006_C"
+    "oseType\032\031\n\013_PrimaryKey\022\n\n\002id\030\001 \001(\r\032^\n\006_C"
     "Name\022\016\n\002id\030\001 \001(\t:\002ID\022\022\n\002ct\030\002 \001(\t:\006\345\244\215\345\220\210"
     "\022\023\n\003arr\030\003 \001(\t:\006\346\225\260\347\273\204\022\033\n\005arrct\030\004 \001(\t:\014\345\244"
     "\215\345\220\210\346\225\260\347\273\204\"$\n\tMetaTable\022\027\n\004list\030\001 \003(\0132\t."
@@ -733,7 +733,7 @@ Meta__PrimaryKey::Meta__PrimaryKey(const Meta__PrimaryKey& from)
 
 void Meta__PrimaryKey::SharedCtor() {
   _cached_size_ = 0;
-  id_ = 0;
+  id_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -769,7 +769,7 @@ Meta__PrimaryKey* Meta__PrimaryKey::New() const {
 }
 
 void Meta__PrimaryKey::Clear() {
-  id_ = 0;
+  id_ = 0u;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -784,11 +784,11 @@ bool Meta__PrimaryKey::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional int32 id = 1;
+      // optional uint32 id = 1;
       case 1: {
         if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &id_)));
           set_has_id();
         } else {
@@ -823,9 +823,9 @@ failure:
 void Meta__PrimaryKey::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:res.Meta._PrimaryKey)
-  // optional int32 id = 1;
+  // optional uint32 id = 1;
   if (has_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->id(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -838,9 +838,9 @@ void Meta__PrimaryKey::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Meta__PrimaryKey::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:res.Meta._PrimaryKey)
-  // optional int32 id = 1;
+  // optional uint32 id = 1;
   if (has_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->id(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -855,10 +855,10 @@ int Meta__PrimaryKey::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // optional int32 id = 1;
+    // optional uint32 id = 1;
     if (has_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->id());
     }
 
@@ -1385,7 +1385,7 @@ Meta::Meta(const Meta& from)
 
 void Meta::SharedCtor() {
   _cached_size_ = 0;
-  id_ = 0;
+  id_ = 0u;
   ct_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -1424,7 +1424,7 @@ Meta* Meta::New() const {
 
 void Meta::Clear() {
   if (_has_bits_[0 / 32] & 3) {
-    id_ = 0;
+    id_ = 0u;
     if (has_ct()) {
       if (ct_ != NULL) ct_->::res::ComposeType::Clear();
     }
@@ -1445,11 +1445,11 @@ bool Meta::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 id = 1;
+      // required uint32 id = 1;
       case 1: {
         if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
                  input, &id_)));
           set_has_id();
         } else {
@@ -1530,9 +1530,9 @@ failure:
 void Meta::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:res.Meta)
-  // required int32 id = 1;
+  // required uint32 id = 1;
   if (has_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->id(), output);
   }
 
   // optional .res.ComposeType ct = 2;
@@ -1563,9 +1563,9 @@ void Meta::SerializeWithCachedSizes(
 ::google::protobuf::uint8* Meta::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:res.Meta)
-  // required int32 id = 1;
+  // required uint32 id = 1;
   if (has_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->id(), target);
   }
 
   // optional .res.ComposeType ct = 2;
@@ -1600,10 +1600,10 @@ int Meta::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required int32 id = 1;
+    // required uint32 id = 1;
     if (has_id()) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
           this->id());
     }
 

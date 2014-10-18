@@ -172,6 +172,18 @@ def printObj(tableObj):
 
 
 
+
+'''
+namespace res
+{
+    void init_dummy_for_proto()
+    {
+        protobuf_AddDesc_demo_2eproto();                
+    }
+};
+'''
+
+
 import datetime,time
 def convert_main():
 	# *.xls:*.proto:meta
@@ -189,14 +201,20 @@ def convert_main():
 	now = datetime.datetime.now()
 	cpp_include_file.write("//generate time :"+str(now)+"\n")
 
+	cpp_include_file_include = "";
+	cpp_include_file_init_dummy = 'namespace res\n{\n\tvoid init_dummy_for_proto()\n\t{\n';
 	for xls in convertmap.keys():
 		#generate proto buffer src code
 		protocompile(convertmap[xls][0])
+		proto_name = convertmap[xls][0].split('.')[0]
 		#append_cpp_include
-		cpp_include_file.write('#include "'+convertmap[xls][0].split(".")[0]+'.pb.h"\n')		
+		cpp_include_file_include += '#include "'+proto_name+'.pb.h"\n'
+		cpp_include_file_init_dummy	+= '\t\tprotobuf_AddDesc_'+proto_name+'_2eproto();\n'
 		#convert to data
 		convertxls(xls,convertmap[xls])
-	cpp_include_file.write('\n')	
+	cpp_include_file_init_dummy += '\n\t}\n};\n';
+	cpp_include_file.write(cpp_include_file_include)		
+	cpp_include_file.write(cpp_include_file_init_dummy)
 	cpp_include_file.close()
 
 def	generate_meta_table_obj(proto,meta):

@@ -261,12 +261,12 @@ class Meta__PrimaryKey : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional int32 id = 1;
+  // optional uint32 id = 1;
   inline bool has_id() const;
   inline void clear_id();
   static const int kIdFieldNumber = 1;
-  inline ::google::protobuf::int32 id() const;
-  inline void set_id(::google::protobuf::int32 value);
+  inline ::google::protobuf::uint32 id() const;
+  inline void set_id(::google::protobuf::uint32 value);
 
   // @@protoc_insertion_point(class_scope:res.Meta._PrimaryKey)
  private:
@@ -277,7 +277,7 @@ class Meta__PrimaryKey : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::int32 id_;
+  ::google::protobuf::uint32 id_;
   friend void  protobuf_AddDesc_demo_2eproto();
   friend void protobuf_AssignDesc_demo_2eproto();
   friend void protobuf_ShutdownFile_demo_2eproto();
@@ -476,12 +476,12 @@ class Meta : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required int32 id = 1;
+  // required uint32 id = 1;
   inline bool has_id() const;
   inline void clear_id();
   static const int kIdFieldNumber = 1;
-  inline ::google::protobuf::int32 id() const;
-  inline void set_id(::google::protobuf::int32 value);
+  inline ::google::protobuf::uint32 id() const;
+  inline void set_id(::google::protobuf::uint32 value);
 
   // optional .res.ComposeType ct = 2;
   inline bool has_ct() const;
@@ -530,7 +530,7 @@ class Meta : public ::google::protobuf::Message {
   ::res::ComposeType* ct_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > arr_;
   ::google::protobuf::RepeatedPtrField< ::res::ComposeType > arrct_;
-  ::google::protobuf::int32 id_;
+  ::google::protobuf::uint32 id_;
   friend void  protobuf_AddDesc_demo_2eproto();
   friend void protobuf_AssignDesc_demo_2eproto();
   friend void protobuf_ShutdownFile_demo_2eproto();
@@ -735,7 +735,7 @@ inline void ComposeType::set_id(::google::protobuf::int32 value) {
 
 // Meta__PrimaryKey
 
-// optional int32 id = 1;
+// optional uint32 id = 1;
 inline bool Meta__PrimaryKey::has_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -746,14 +746,14 @@ inline void Meta__PrimaryKey::clear_has_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void Meta__PrimaryKey::clear_id() {
-  id_ = 0;
+  id_ = 0u;
   clear_has_id();
 }
-inline ::google::protobuf::int32 Meta__PrimaryKey::id() const {
+inline ::google::protobuf::uint32 Meta__PrimaryKey::id() const {
   // @@protoc_insertion_point(field_get:res.Meta._PrimaryKey.id)
   return id_;
 }
-inline void Meta__PrimaryKey::set_id(::google::protobuf::int32 value) {
+inline void Meta__PrimaryKey::set_id(::google::protobuf::uint32 value) {
   set_has_id();
   id_ = value;
   // @@protoc_insertion_point(field_set:res.Meta._PrimaryKey.id)
@@ -1071,7 +1071,7 @@ inline void Meta__CName::set_allocated_arrct(::std::string* arrct) {
 
 // Meta
 
-// required int32 id = 1;
+// required uint32 id = 1;
 inline bool Meta::has_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -1082,14 +1082,14 @@ inline void Meta::clear_has_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
 inline void Meta::clear_id() {
-  id_ = 0;
+  id_ = 0u;
   clear_has_id();
 }
-inline ::google::protobuf::int32 Meta::id() const {
+inline ::google::protobuf::uint32 Meta::id() const {
   // @@protoc_insertion_point(field_get:res.Meta.id)
   return id_;
 }
-inline void Meta::set_id(::google::protobuf::int32 value) {
+inline void Meta::set_id(::google::protobuf::uint32 value) {
   set_has_id();
   id_ = value;
   // @@protoc_insertion_point(field_set:res.Meta.id)
