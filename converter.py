@@ -202,7 +202,7 @@ def convert_main():
 	cpp_include_file.write("//generate time :"+str(now)+"\n")
 
 	cpp_include_file_include = "";
-	cpp_include_file_init_dummy = 'namespace res\n{\n\tvoid init_dummy_for_proto()\n\t{\n';
+	cpp_include_file_init_dummy = 'namespace res\n{\n\tvoid init_proto_dummy()\n\t{\n';
 	for xls in convertmap.keys():
 		#generate proto buffer src code
 		protocompile(convertmap[xls][0])
