@@ -1,0 +1,38 @@
+package res;
+
+
+message TaskObj
+{
+	message _CName
+	{
+		optional string		type	= 1[default="类型"];
+		optional string		value	= 2[default="值"];
+		optional string		method	= 3[default="更新方式"];
+	};
+	optional	uint32	type	=	1;//check attr,item,state,event
+	optional	uint32	value	=	2;
+	optional	uint32	method	=	3;	
+};
+
+message Task
+{
+	message _PrimaryKey
+	{
+		optional uint32		id = 1;
+	};
+	message _CName
+	{
+		optional string		id = 1[default="ID"]; // from 1...2048
+		optional string		name = 2[default="名字"];
+		optional string		desc = 3[default="描述"];
+		optional string		obj = 4[default="目标"];
+	};
+	required	uint32		id		= 1;
+	optional	string		name	= 2;
+	optional	string		desc	= 3;
+	optional	TaskObj		obj		= 4;
+};
+message TaskTable
+{
+	repeated Task	list	=	1;
+};

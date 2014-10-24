@@ -123,6 +123,7 @@ def convertxls(xls,convertparam):
 	meta = convertparam[1]
 	binf = convertparam[2]
 	proto_mod_name = proto.split(".")[0]+"_pb2"
+	#print(proto_mod_name)
 	proto_mod = __import__(proto_mod_name)
 	objMeta = getattr(proto_mod,meta)
 	desc = objMeta.DESCRIPTOR
@@ -189,7 +190,9 @@ def convert_main():
 	# *.xls:*.proto:meta
 	convertmap = {};
 	convertmap_file = open("convertmap.conf")
-	for line in convertmap_file:
+	for line in convertmap_file.readlines():
+		line = line.strip('\r')
+		line = line.strip('\n')
 		attrs = line.split(":")
 		attrs.append(attrs[2]+"Table.bin")
 		print(attrs)
