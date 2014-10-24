@@ -5,10 +5,15 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 sys.path.append('./python')
 #rsc=__import__('resconvert')
+import commands
+
 def protocompile(protoname):
 	execString = 'protoc --proto_path=./meta ./meta/'+protoname+' --python_out=python --cpp_out=cpp';
 	print("system is exec :'"+execString+"' , pls waiting ...")
-	os.system(execString)
+	(status, output) = commands.getstatusoutput(execString)
+	#os.system(execString)
+	if status != 0:
+		print("error ! when  compiling "+output)
 
 def get_token_list(meta_desc,strval):
 	names = strval.split(".")
@@ -78,7 +83,7 @@ def fill_table_row_field(obj,field_desc,value):
 	fieldObjDesc = obj.DESCRIPTOR.fields_by_name[field["name"]]
 	attrType = fieldObjDesc.type
 	#print(attrType)
-	print("set object value : "+obj.DESCRIPTOR.name+"."+field['name']+"#"+str(field['idx'])+"="+value)
+	#print("set object value : "+obj.DESCRIPTOR.name+"."+field['name']+"#"+str(field['idx'])+"="+value)
 	if(field['idx'] > 0):
 		arrayObj = getattr(obj,field["name"])
 		while(len(arrayObj) < field["idx"]):
@@ -148,6 +153,7 @@ def convertxls(xls,convertparam):
 	f=open(binFilePath,"wb")
 	f.write(tableObj.SerializeToString())
 	f.close()
+	print("convert "+xlsFilePath+" ok !")
 
 
 ######################################
