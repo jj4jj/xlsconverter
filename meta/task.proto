@@ -5,13 +5,15 @@ message TaskObj
 {
 	message _CName
 	{
-		optional string		type	= 1[default="类型"];
-		optional string		value	= 2[default="值"];
-		optional string		method	= 3[default="更新方式"];
+		optional string		event	= 1[default="事件"];
+		optional string		param	= 2[default="参数"];
+		optional string		value	= 3[default="要求值"];
+		optional string		method	= 4[default="更新方式"];
 	};
-	optional	uint32	type	=	1;//check attr,item,state,event
-	optional	uint32	value	=	2;
-	optional	uint32	method	=	3;	
+	optional	uint32	event	=	1;
+	optional	uint32	param	=	2;
+	optional	uint32	value	=	3;
+	optional	uint32	method	=	4;	
 };
 
 message Task
@@ -26,11 +28,13 @@ message Task
 		optional string		name = 2[default="名字"];
 		optional string		desc = 3[default="描述"];
 		optional string		obj = 4[default="目标"];
+		optional string		type = 5[default="类型"];
 	};
 	required	uint32		id		= 1;
-	optional	string		name	= 2;
-	optional	string		desc	= 3;
-	optional	TaskObj		obj		= 4;
+	optional	uint32		type	= 2;
+	optional	string		name	= 3;
+	optional	string		desc	= 4;
+	optional	TaskObj		obj		= 5;
 };
 message TaskTable
 {
